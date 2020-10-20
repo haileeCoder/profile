@@ -1,0 +1,176 @@
+﻿<script>
+$(document).ready(function(){
+	$('.owl-carousel').owlCarousel({
+			loop:false,
+		    margin:10,
+		    nav:true,
+		    responsive:{
+		        items:2
+		    }
+		    });
+});
+
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];  
+
+function modalOpen(num){
+    modal.style.display = "block";
+    var title = document.getElementsByClassName('box_title')[num].innerText;
+    var content = document.getElementsByClassName('box_content')[num].innerText;
+    var src = document.getElementsByClassName('project_img')[num].getAttribute('src');
+    var page = document.getElementsByClassName('page')[num].getAttribute('href');
+    var repo = document.getElementsByClassName('page')[num].getAttribute('href');
+	
+    // 타이틀, 텍스트 내용, 이미지 경로 및 크기 지정   
+    document.getElementById('modal_title').innerText=title;
+    document.getElementById('modal_text').innerText=content;
+    document.getElementById('modal_img').src=src;
+    document.getElementById('modal_img').style.height='340px';
+    document.getElementById('modal_page').href = page;
+    document.getElementById('modal_repo').href = repo;
+	
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function modalClose(){
+    modal.style.display = "none";
+}
+</script>
+
+<!-- 포트폴리오 -->
+<section id="project">
+	<div>
+		<span class="title">PROJECT</span>
+		<div id="project_content">
+			<div id="project_icon">
+				<!-- 깃허브 버튼 영역 -->
+				<div>
+					<a href="https://github.com/haileeCoder"><img id="memoticon_project" src="../img/memoticon_2.gif"></a>					
+					<p>click me 👆﻿</p>
+				</div>
+				<!--top버튼 영역 -->
+				<div class="topBtn">
+					<a href="./"><img src="../img/top-button.jpg"></a>
+				</div>
+				<!-- 모달창 영역 -->
+				<div class="container owl-carousel owl-theme">
+					<div class="project_box" onclick="modalOpen('0')">
+						<div class="project_innerImg">
+							<img class="project_img" src="../img/101.jpeg">
+						</div>
+						<div class="project_innerText">
+							<div>
+								<h2 class="box_title">My Skills</h2>
+							</div>
+							<div class="text_content">
+								<p class="box_content">HTML, CSS, <br>
+								   Java, JavaScript, <br> 
+								   MySQL, Oracle. <br>
+								   <br>
+								   웹 사이트 개발 경험 및<br>
+								   렉스퍼트 3.0 툴을 사용한 <br> 
+								   보고서 작성 기능 구현 경험 </p>	
+							</div>
+							<div class="btn_list">
+								<ul>
+									<li><a class="button page" href="https://github.com/haileeCoder">project page</a></li>
+									<li><a class="button repo" href="https://github.com/haileeCoder">project repo</a></li>
+								</ul>
+							</div>						
+						</div>
+					</div>
+					<div class="project_box" onclick="modalOpen('1')">
+						<div class="project_innerImg">
+							<img class="project_img" src="../img/python.jpeg">
+						</div>
+						<div class="project_innerText">
+							<div>
+								<h2 class="box_title">Python 웹 스크래퍼</h2>
+							</div>
+							<div class="text_content">
+								<p class="box_content">
+								 python? 🤫🤫 </p>	
+							</div>
+							<div class="btn_list">
+								<ul>
+									<li><a class="button page" href="https://github.com/haileeCoder">project page</a></li>
+									<li><a class="button repo" href="https://github.com/haileeCoder">project repo</a></li>
+								</ul>
+							</div>						
+						</div>
+					</div>
+					<div class="project_box">			
+						<div class="project_innerImg">
+						
+						</div>
+						<div class="project_innerText">
+							<p>python? 🤫🤫﻿</p>
+						</div>
+					</div>
+					
+					<!-- 영역 
+					 <div class="project_box">			
+						<div class="project_innerImg">
+						
+						</div>
+						<div class="project_innerText">
+							<p>python? 🤫🤫﻿</p>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal_content">
+        <span class="close" onclick="modalClose()">&times;</span>         
+        <div class="modal_innerImg">
+			<img id="modal_img">
+		</div>
+		<div class="project_innerText">
+			<div>
+	        	<h2 id="modal_title"></h2>
+	        </div>                                                      
+	        <div>
+	        	<p id="modal_text"></p>
+	        </div>
+		</div>
+		<div class="modal_btn">
+			<a class="button" id="modal_page" href="">project page</a><br>
+			<a class="button" id="modal_repo" href="">project repo</a>			
+		</div>	
+      </div>
+    </div>
+    
+    <div class="owl-carousel owl-theme owl-loaded">
+		<div class="owl-stage-outer">
+			<div class="owl-stage">
+				<div class="owl-item">
+					<a href="#" class=""><img src=" "></a>
+				</div>
+				<div class="owl-item">
+					<a href="#" class=""><img src=" "></a>
+				</div>
+				<div class="owl-item">
+					<a href="#" class=""><img src=" "></a>
+				</div>
+				<div class="owl-item">
+					<a href="#" class=""><img src=" "></a>
+				</div>
+				<div class="owl-item">
+					<a href="#" class=""><img src=" "></a>
+				</div>
+				<div class="owl-item">
+					<a href="#" class=""><img src=" "></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
